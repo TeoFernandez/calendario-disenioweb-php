@@ -57,4 +57,32 @@ $conexion = mysqli_connect('localhost', 'root', '', 'fravega', '3307');
     </center>
     <br>
 </body>
+        <!--
+            PROCEDIMIENTO:
+            BEGIN
+            -- Crea la tabla temporaria
+            CREATE TEMPORARY TABLE dias_de_la_semana(
+                                                    id INT,
+                                                    nombredia VARCHAR(100),
+                                                    disweb VARCHAR(100)
+                                                    );
+            -- Insertar datos
+            INSERT INTO dias_de_la_semana(id,nombredia,disweb)
+            VALUES(1,'Domingo','Hoy no cursas diseño web'),
+                (2,'Lunes','Hoy no cursas diseño web'),
+                (3,'Martes','Hoy si cursas diseño web'),
+                (4,'Miercoles','Hoy no cursas diseño web'),
+                (5,'Jueves','Hoy si cursas diseño web'),
+                (6,'Viernes','Hoy no cursas diseño web'),
+                (7,'Sábado','Hoy no cursas diseño web');
+
+            -- Mostrar si se cursa o no diseño web
+            SELECT disweb as CURSADA FROM dias_de_la_semana WHERE dayofweek(now())=id;
+                
+            -- Consultar los dias de la semna
+            SELECT * FROM dias_de_la_semana;
+            -- Al finalizar el proceso de la consulta, se puede borrar de la memoria RAM
+            DROP TEMPORARY TABLE dias_de_la_semana;
+            END
+        -->
 </html>
