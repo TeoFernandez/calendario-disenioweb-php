@@ -16,7 +16,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'fravega', '3307');
     <br>
 
     <?php
-    $sql = "CALL dias_semana()";
+    $sql = "CALL dias_semana2()";
     $result = mysqli_query($conexion, $sql);
 
     $datos = [];
@@ -36,7 +36,10 @@ $conexion = mysqli_connect('localhost', 'root', '', 'fravega', '3307');
     }
     ?>
 
+    $sql2 = ""
+
     <center><h2><?php echo $mensaje_hoy; ?></h2></center>
+    <center><h2><?php// echo $nuevoMensaje?></h2></center>
 
     <center>
     <table border="1">
@@ -44,6 +47,7 @@ $conexion = mysqli_connect('localhost', 'root', '', 'fravega', '3307');
             <th>ID</th>
             <th>DÍA</th>
             <th>CURSADA</th>
+            <th>DIA DE CLASE</th>
         </tr>
 
         <?php foreach($datos as $fila) { ?>
